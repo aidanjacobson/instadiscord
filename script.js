@@ -95,9 +95,29 @@ function main() {
     if (params.has("text")) log("text: " + params.get("text"));
     if (params.has("title")) log("title: " + params.get("title"));
     if (params.has("url")) log("url: " + params.get("url"));
+
+    var text = params.get("text");
+    if (text.indexOf("igshid") > -1) { // sharing instagram content
+        processInstagram(text);
+    }
 }
 
 function log(x) {
     console.log(x);
     output.innerHTML += x + "<br>";
+}
+
+function processInstagram(text) {
+    var url = "https://aidanjacobson.duckdns.org:8123/api/services/notify/meme_squad_hype";
+    var type = text.indexOf("reel") > -1 ? "reel" : "post"
+    var message = `${localStorage.name} just sent an instagram ${type}. ${text}`;
+    var callData = {
+        target: ["1039064436884897822"],
+        message: message
+    }
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url);
+    xhr.setRequestHeader("Authorization", `Bearer ${access_token}`);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(callData));
 }
