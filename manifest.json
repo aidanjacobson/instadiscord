@@ -1,0 +1,18 @@
+{
+    "name": "Discord Sync",
+    "start_url": "https://aidanjacobson.github.io/instadiscord/",
+    "display": "standalone",
+    "share_target": {
+        "action": "discordsync",
+        "method": "GET",
+        "params": {
+            "title": "title",
+            "text": "text",
+            "url": "url"
+        }
+    },
+    "icons": [{
+        "src": "https://www.cac.cornell.edu/wiki/images/4/44/White_square.png",
+        "sizes": "192x192 512x512"
+    }]
+}
