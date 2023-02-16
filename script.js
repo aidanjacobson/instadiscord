@@ -110,7 +110,7 @@ function log(x) {
 function processInstagram(text) {
     var url = "https://aidanjacobson.duckdns.org:8123/api/services/notify/meme_squad_hype";
     var type = text.indexOf("reel") > -1 ? "reel" : "post"
-    var message = `${localStorage.name} just sent an instagram ${type}. ${text}`;
+    var message = `${text} (${type} sent by ${localStorage.name})`;
     var callData = {
         target: ['1063669121935495168'],
         message: message
