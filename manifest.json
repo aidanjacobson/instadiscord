@@ -3,7 +3,7 @@
     "start_url": "https://aidanjacobson.github.io/instadiscord/",
     "display": "standalone",
     "share_target": {
-        "action": "instadiscord",
+        "action": "index.html",
         "method": "GET",
         "params": {
             "title": "title",
