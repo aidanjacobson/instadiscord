@@ -112,7 +112,7 @@ function processInstagram(text) {
     var type = text.indexOf("reel") > -1 ? "reel" : "post"
     var message = `${localStorage.name} just sent an instagram ${type}. ${text}`;
     var callData = {
-        target: ["1039064436884897822"],
+        target: ['1063669121935495168'],
         message: message
     }
     var xhr = new XMLHttpRequest();
